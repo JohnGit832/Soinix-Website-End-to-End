@@ -98,6 +98,49 @@
   }
 }
 
+/*
+  Homepage surfaces. Intel components treat --background as the contrast colour
+  and --ink as the surface colour, so each surface remaps those tokens in scope.
+  Light surfaces: deep teal content, teal signals (lime is unreadable on cream).
+  Teal surfaces: white content, lime signals.
+*/
+@layer components {
+  .surface-cream,
+  .surface-white {
+    --background: #006258;
+    --signal: #006258;
+    --cream: #4f6f68;
+    color: #006258;
+  }
+  .surface-cream {
+    --ink: #fff7d4;
+    background-color: #fff7d4;
+  }
+  .surface-white {
+    --ink: #ffffff;
+    background-color: #ffffff;
+  }
+  .surface-teal,
+  .surface-deep {
+    --background: #ffffff;
+    --signal: #acff5f;
+    --cream: #fff7d4;
+    color: #ffffff;
+  }
+  .surface-teal {
+    --ink: #006258;
+    background-color: #006258;
+  }
+  .surface-deep {
+    --ink: #004a42;
+    background-color: #004a42;
+  }
+  .surface-teal :focus-visible,
+  .surface-deep :focus-visible {
+    outline-color: #acff5f;
+  }
+}
+
 @utility container-site {
   width: 100%;
   max-width: 1360px;
@@ -158,6 +201,13 @@
   font-size: clamp(2.625rem, 5.4vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.042em;
+}
+
+@utility bg-grid-brand {
+  background-image:
+    linear-gradient(to right, rgb(0 98 88 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 98 88 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
 @utility bg-grid-fine {

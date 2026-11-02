@@ -2,11 +2,11 @@ export const SITE = {
   name: 'Soinix Growth Technologies',
   legalName: 'Soinix Growth Technologies LLC',
   url: 'https://soinix.com',
-  title: 'Revenue Activation Systems | Soinix Growth Technologies',
+  title: 'Organic Asset Growth Infrastructure | Soinix Growth Technologies',
   description:
-    'We build and run Revenue Activation systems for wealth management firms and independent insurance agencies, creating qualified revenue opportunities across new demand and existing relationships.',
+    'Soinix builds institutional growth infrastructure for established wealth management and financial advisory firms: market intelligence, opportunity strategy and qualified advisor conversations.',
   bookHref: '/book',
-  bookLabel: 'Book a Revenue Activation Review',
+  bookLabel: 'Request Market Mapping',
   /** Used later, after the qualification flow on /book. Never link to it directly from navigation. */
   calendlyUrl: 'https://calendly.com/johngit/strategycall',
 } as const
@@ -16,224 +16,164 @@ export type NavLink = {
   description: string
   href: string
   comingSoon?: boolean
-  children?: NavLink[]
 }
 
-export type NavColumn = {
+export type NavGroup = {
   label: string
+  description?: string
   links: NavLink[]
 }
 
-export type NavFeature = {
-  label: string
-  headline: string
+export type NavIntro = {
+  eyebrow: string
+  title: string
   body: string
-  cta: string
-  href: string
+  cta?: { label: string; href: string }
 }
 
 export type NavMenu = {
   id: string
   label: string
-  columns: NavColumn[]
-  feature: NavFeature
+  intro: NavIntro
+  groups: NavGroup[]
+  /** Number rows continuously across groups (01, 02, ...). */
+  numbered?: boolean
 }
 
 export const NAV: NavMenu[] = [
   {
-    id: 'revenue-activation',
-    label: 'Revenue Activation',
-    columns: [
-      {
-        label: 'Understand Revenue Activation',
-        links: [
-          {
-            title: 'What Is Revenue Activation',
-            description: 'How we turn market opportunity into qualified revenue conversations.',
-            href: '/revenue-activation',
-          },
-          {
-            title: 'How It Works',
-            description:
-              'See how opportunities move from discovery to activation, qualification, and measurement.',
-            href: '/how-it-works',
-          },
-          {
-            title: 'Revenue Plays',
-            description: 'See the different growth opportunities we can build campaigns around.',
-            href: '/revenue-plays',
-          },
-          {
-            title: 'Our Approach',
-            description: 'How strategy, data, technology, and execution work together.',
-            href: '/our-approach',
-          },
-        ],
-      },
-    ],
-    feature: {
-      label: 'New to Revenue Activation?',
-      headline: 'Growth should not depend on disconnected campaigns.',
-      body: 'See how new demand and existing relationships can work together as one operating system.',
-      cta: 'Explore Revenue Activation',
-      href: '/revenue-activation',
-    },
-  },
-  {
     id: 'solutions',
     label: 'Solutions',
-    columns: [
+    intro: {
+      eyebrow: 'Solutions',
+      title: 'Two sources of organic growth. One infrastructure.',
+      body: 'New demand creates opportunity across the markets you want to win. Owned opportunity expands the value already inside the business.',
+    },
+    groups: [
       {
         label: 'New Demand',
+        description: 'Create new opportunities across the markets you want to win.',
         links: [
           {
-            title: 'Target Account Acquisition',
-            description: 'Create demand across the organizations and people you want to win.',
+            title: 'New Demand',
+            description: 'The infrastructure for reaching new markets, accounts and relationships.',
+            href: '/solutions/new-demand',
+          },
+          {
+            title: 'Target Accounts',
+            description: 'Focused coverage of the organizations and people you want to win.',
             href: '/solutions/target-account-acquisition',
           },
           {
-            title: 'Strategic Referral Partner Acquisition',
-            description:
-              'Build relationships with professionals who can repeatedly introduce strong opportunities.',
+            title: 'Strategic Referral Partners',
+            description: 'Professional relationships that repeatedly introduce strong opportunities.',
             href: '/solutions/strategic-referral-partner-acquisition',
           },
           {
             title: 'Market and Niche Expansion',
-            description: 'Enter selected markets, segments, and geographies with focused campaigns.',
+            description: 'Enter selected geographies and client segments deliberately.',
             href: '/solutions/market-and-niche-expansion',
           },
           {
-            title: 'Signal-Based Acquisition',
-            description:
-              'Act on timing, business events, and changes that create a reason to start a conversation.',
+            title: 'Timing-Led Opportunity',
+            description: 'Act on the capital and career events that precede a decision.',
             href: '/solutions/signal-based-acquisition',
           },
         ],
       },
       {
-        label: 'Existing Relationships',
+        label: 'Owned Opportunity',
+        description: 'Expand the value of relationships and opportunities already inside the business.',
         links: [
           {
-            title: 'Dormant Opportunity Reactivation',
+            title: 'Existing Relationships',
+            description: 'Turn more of the relationships around the firm into active conversations.',
+            href: '/solutions/existing-relationships',
+          },
+          {
+            title: 'Relationship Expansion',
+            description: 'Find additional opportunity across households and relationships.',
+            href: '/solutions/relationship-expansion',
+          },
+          {
+            title: 'Referral Programs',
+            description: 'Turn trust into a more consistent source of introductions.',
+            href: '/solutions/referral-activation',
+          },
+          {
+            title: 'Dormant Opportunity',
             description: 'Restart valuable conversations that stopped moving.',
             href: '/solutions/dormant-opportunity-reactivation',
           },
           {
-            title: 'Relationship Expansion',
-            description: 'Find additional revenue opportunities across relationships you already have.',
-            href: '/solutions/relationship-expansion',
-          },
-          {
-            title: 'Referral Activation',
-            description: 'Turn trusted relationships into a more consistent source of introductions.',
-            href: '/solutions/referral-activation',
-          },
-          {
             title: 'Win-Back and Re-Engagement',
-            description: 'Reopen conversations with former prospects, clients, or accounts.',
+            description: 'Reopen conversations with former prospects and clients.',
             href: '/solutions/win-back-and-re-engagement',
           },
         ],
       },
     ],
-    feature: {
-      label: 'Not sure where to start?',
-      headline: 'Find the opportunity worth activating first.',
-      body: 'We can look across your market, relationships, demand, and current systems to identify where the strongest opportunity may be.',
-      cta: SITE.bookLabel,
-      href: SITE.bookHref,
-    },
   },
   {
     id: 'industries',
     label: 'Industries',
-    columns: [
+    numbered: true,
+    intro: {
+      eyebrow: 'Industries',
+      title: 'Built around the markets we serve.',
+      body: 'Infrastructure designed around the economics, sales cycles and relationship models of each market.',
+    },
+    groups: [
       {
         label: 'Financial Services',
         links: [
           {
+            title: 'Wealth Management',
+            description: 'Institutional organic growth infrastructure for established wealth firms.',
+            href: '/financial-services/wealth-management',
+          },
+          {
+            title: 'Financial Advisors',
+            description: 'Growth infrastructure for independent advisory practices and multi-advisor firms.',
+            href: '/financial-services/financial-advisors',
+          },
+          {
             title: 'Financial Services',
-            description: 'Revenue Activation for relationship-led financial firms.',
+            description: 'Broader financial-services growth infrastructure.',
             href: '/financial-services',
-            children: [
-              {
-                title: 'Wealth Management',
-                description:
-                  'Create new client and asset opportunities across new demand and existing relationships.',
-                href: '/financial-services/wealth-management',
-              },
-              {
-                title: 'Financial Advisors',
-                description:
-                  'Build more qualified advisor conversations with the clients and relationships you want to grow.',
-                href: '/financial-services/financial-advisors',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        label: 'Insurance',
-        links: [
-          {
-            title: 'Independent Insurance Agencies',
-            description:
-              'Create more quoted and bound commercial business across new demand and the existing book.',
-            href: '/insurance-agencies',
-          },
-        ],
-      },
-      {
-        label: 'By Growth Priority',
-        links: [
-          {
-            title: 'Create New Demand',
-            description: 'Reach new markets, target accounts, prospects, and referral partners.',
-            href: '/solutions/new-demand',
-          },
-          {
-            title: 'Build Strategic Referral Channels',
-            description: 'Create relationships that repeatedly introduce relevant opportunities.',
-            href: '/solutions/strategic-referral-partner-acquisition',
-          },
-          {
-            title: 'Activate Existing Relationships',
-            description: 'Work opportunities already inside the business more consistently.',
-            href: '/solutions/existing-relationships',
           },
         ],
       },
     ],
-    feature: {
-      label: 'Start with the opportunity',
-      headline: 'Where could stronger revenue growth come from next?',
-      body: 'Explore the systems we build across new demand and existing relationships.',
-      cta: 'Explore Revenue Activation',
-      href: '/revenue-activation',
-    },
   },
   {
     id: 'resources',
     label: 'Resources',
-    columns: [
+    intro: {
+      eyebrow: 'Resources',
+      title: 'Research, frameworks and tools.',
+      body: 'Our thinking on market intelligence, organic asset growth and advisor leverage.',
+      cta: { label: 'All resources', href: '/resources' },
+    },
+    groups: [
       {
-        label: 'Learn',
+        label: 'Research & Insights',
         links: [
           {
             title: 'Insights',
-            description: 'Ideas and analysis around Revenue Activation.',
+            description: 'Analysis on organic growth in wealth management.',
             href: '/resources/insights',
             comingSoon: true,
           },
           {
             title: 'Guides and Playbooks',
-            description: 'Practical strategies teams can implement.',
+            description: 'Practical strategies firms can implement.',
             href: '/resources/guides',
             comingSoon: true,
           },
           {
-            title: 'Revenue Activation Library',
-            description: 'Campaign ideas and frameworks across different growth opportunities.',
+            title: 'Frameworks Library',
+            description: 'Opportunity frameworks across growth sources.',
             href: '/resources/library',
             comingSoon: true,
           },
@@ -244,113 +184,101 @@ export const NAV: NavMenu[] = [
         links: [
           {
             title: 'Assessments',
-            description: 'Find where revenue opportunity may be going unused.',
+            description: 'Find where opportunity may be going unused.',
             href: '/resources/assessments',
             comingSoon: true,
           },
           {
             title: 'Calculators',
-            description: 'Model market opportunity and potential revenue.',
+            description: 'Model market opportunity and asset potential.',
             href: '/resources/calculators',
             comingSoon: true,
           },
           {
             title: 'Templates',
-            description: 'Campaign and growth resources.',
+            description: 'Working materials for growth teams.',
             href: '/resources/templates',
             comingSoon: true,
           },
         ],
       },
     ],
-    feature: {
-      label: 'Featured resource',
-      headline: 'The Revenue Activation Vault',
-      body: 'Practical campaigns for creating new demand and activating existing relationships.',
-      cta: 'Explore Resources',
-      href: '/resources',
-    },
   },
   {
-    id: 'company',
-    label: 'Company',
-    columns: [
+    id: 'about',
+    label: 'About',
+    intro: {
+      eyebrow: 'About Soinix',
+      title: 'Growth infrastructure, built and operated.',
+      body: 'An independent firm building the market intelligence and distribution infrastructure behind organic asset growth.',
+    },
+    groups: [
       {
-        label: 'About',
+        label: 'Company',
         links: [
           {
-            title: 'About Us',
-            description: 'Our company, what we believe, and why we built Revenue Activation.',
+            title: 'About',
+            description: 'Who we are, what we believe, and how we think about growth infrastructure.',
             href: '/about',
           },
           {
-            title: 'How We Work',
-            description: 'What working with us looks like from opportunity discovery through execution.',
-            href: '/how-we-work',
-          },
-          {
             title: 'Our Approach',
-            description: 'How we combine systems thinking, data, technology, and hands-on execution.',
+            description: 'How strategy, intelligence, technology and execution fit together.',
             href: '/our-approach',
           },
         ],
       },
       {
-        label: 'Company',
+        label: 'Working Together',
         links: [
-          { title: 'Contact', description: 'Talk to us.', href: '/contact' },
           {
-            title: 'Resources',
-            description: 'Explore our thinking, tools, and frameworks.',
-            href: '/resources',
+            title: 'How We Work',
+            description: 'How Soinix builds, deploys and operates the infrastructure.',
+            href: '/how-we-work',
+          },
+          {
+            title: 'Contact',
+            description: 'Start a conversation with the team.',
+            href: '/contact',
           },
         ],
       },
     ],
-    feature: {
-      label: 'Our point of view',
-      headline: 'Revenue growth needs an operating system.',
-      body: 'See why we believe firms should manage revenue opportunity with the same discipline they apply to every other important part of the business.',
-      cta: 'Our Approach',
-      href: '/our-approach',
-    },
   },
 ]
 
 export const FOOTER_COLUMNS: { label: string; links: { title: string; href: string }[] }[] = [
   {
-    label: 'Revenue Activation',
-    links: [
-      { title: 'What Is Revenue Activation', href: '/revenue-activation' },
-      { title: 'How It Works', href: '/how-it-works' },
-      { title: 'Revenue Plays', href: '/revenue-plays' },
-      { title: 'Our Approach', href: '/our-approach' },
-    ],
-  },
-  {
     label: 'Solutions',
     links: [
       { title: 'New Demand', href: '/solutions/new-demand' },
-      { title: 'Strategic Referral Partners', href: '/solutions/strategic-referral-partner-acquisition' },
       { title: 'Target Accounts', href: '/solutions/target-account-acquisition' },
+      { title: 'Strategic Referral Partners', href: '/solutions/strategic-referral-partner-acquisition' },
       { title: 'Existing Relationships', href: '/solutions/existing-relationships' },
     ],
   },
   {
     label: 'Industries',
     links: [
-      { title: 'Financial Services', href: '/financial-services' },
       { title: 'Wealth Management', href: '/financial-services/wealth-management' },
       { title: 'Financial Advisors', href: '/financial-services/financial-advisors' },
-      { title: 'Independent Insurance Agencies', href: '/insurance-agencies' },
+      { title: 'Financial Services', href: '/financial-services' },
     ],
   },
   {
-    label: 'Company',
+    label: 'Resources',
+    links: [
+      { title: 'All Resources', href: '/resources' },
+      { title: 'Insights', href: '/resources/insights' },
+      { title: 'Guides and Playbooks', href: '/resources/guides' },
+    ],
+  },
+  {
+    label: 'About',
     links: [
       { title: 'About', href: '/about' },
       { title: 'How We Work', href: '/how-we-work' },
-      { title: 'Resources', href: '/resources' },
+      { title: 'Our Approach', href: '/our-approach' },
       { title: 'Contact', href: '/contact' },
     ],
   },

@@ -23,8 +23,33 @@ const EXTRA_PAGES: PlannedPage[] = [
     section: 'Solutions',
   },
   {
+    href: '/resources',
+    title: 'Resources',
+    description: 'Research, frameworks and tools on market intelligence and organic asset growth.',
+    section: 'Resources',
+  },
+  // Legacy routes kept reachable for backward compatibility. Not surfaced in navigation.
+  {
+    href: '/revenue-activation',
+    title: 'Growth Infrastructure',
+    description: 'How Soinix turns market opportunity into qualified advisor conversations.',
+    section: 'About',
+  },
+  {
+    href: '/how-it-works',
+    title: 'How It Works',
+    description: 'How opportunity moves from market intelligence to a qualified advisor conversation.',
+    section: 'About',
+  },
+  {
+    href: '/revenue-plays',
+    title: 'Growth Plays',
+    description: 'The growth opportunities the infrastructure can be configured around.',
+    section: 'Solutions',
+  },
+  {
     href: '/solutions/relationship-expansion-and-referral-activation',
-    title: 'Relationship Expansion and Referral Activation',
+    title: 'Relationship Expansion and Referral Programs',
     description:
       'Find additional opportunities across the relationships you already have and turn trust into a more consistent source of introductions.',
     section: 'Solutions',
@@ -54,16 +79,11 @@ function collect(): PlannedPage[] {
         section,
       })
     }
-    link.children?.forEach((child) => add(child, section))
   }
   for (const menu of NAV) {
-    for (const column of menu.columns) {
-      for (const link of column.links) add(link, menu.label)
+    for (const group of menu.groups) {
+      for (const link of group.links) add(link, menu.label)
     }
-    add(
-      { title: menu.feature.headline, description: menu.feature.body, href: menu.feature.href },
-      menu.label,
-    )
   }
   for (const page of EXTRA_PAGES) map.set(page.href, page)
   map.delete('/book')

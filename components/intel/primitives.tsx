@@ -143,7 +143,7 @@ export function IntelButton({
       href={href}
       className={cn(
         'group/btn inline-flex h-12 items-center justify-center gap-2.5 rounded-[4px] px-5 text-[15px] font-medium transition-colors duration-200 ease-[var(--ease-system)]',
-        variant === 'primary' && 'bg-signal text-ink hover:bg-background',
+        variant === 'primary' && 'bg-signal text-ink hover:opacity-90',
         variant === 'ghost' &&
           'border border-background/20 text-background hover:border-background/50 hover:bg-background/[0.04]',
         className,

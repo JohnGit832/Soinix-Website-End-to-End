@@ -11,14 +11,25 @@ import { IndependentAdvantage } from '@/components/intel/independent-advantage'
 import { IdealClientSignalMatrix } from '@/components/intel/ideal-client-signal-matrix'
 import { InfrastructureComparison } from '@/components/intel/infrastructure-comparison'
 
+type Tone = 'cream' | 'white' | 'teal' | 'deep'
+
+const TONE_CLASS: Record<Tone, string> = {
+  cream: 'surface-cream',
+  white: 'surface-white',
+  teal: 'surface-teal',
+  deep: 'surface-deep',
+}
+
 function Section({
   id,
   labelledBy,
+  tone,
   children,
   className,
 }: {
   id?: string
   labelledBy: string
+  tone: Tone
   children: React.ReactNode
   className?: string
 }) {
@@ -26,7 +37,7 @@ function Section({
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cn('scroll-mt-20 border-t border-background/10 py-20 md:py-28 lg:py-32', className)}
+      className={cn('scroll-mt-20 py-20 md:py-28 lg:py-32', TONE_CLASS[tone], className)}
     >
       <div className="container-site flex flex-col gap-12 lg:gap-16">{children}</div>
     </section>
@@ -35,8 +46,8 @@ function Section({
 
 export function HomeHero() {
   return (
-    <section aria-labelledby="hero-heading" className="relative overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-dark [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
+    <section aria-labelledby="hero-heading" className="surface-cream relative overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-brand [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
       <div className="container-site relative grid grid-cols-1 gap-14 pb-20 pt-14 md:pt-20 lg:grid-cols-12 lg:gap-10 lg:pb-28 lg:pt-24">
         <div className="flex flex-col gap-8 lg:col-span-5 lg:pt-6">
           <IntelEyebrow>Organic Asset Growth Infrastructure</IntelEyebrow>
@@ -54,12 +65,14 @@ export function HomeHero() {
               Explore the Infrastructure
             </IntelButton>
           </div>
-          <p className="border-t border-background/10 pt-5 text-[13.5px] leading-relaxed text-background/50">
+          <p className="border-t border-background/15 pt-5 text-[13.5px] leading-relaxed text-background/60">
             Built for established independent RIAs, wealth managers and multi-advisor firms.
           </p>
         </div>
         <div className="lg:col-span-7">
-          <HeroIntelligence />
+          <div className="surface-teal on-dark rounded-[4px] shadow-[0_40px_80px_-48px_rgb(0_74_66_/_0.55)]">
+            <HeroIntelligence />
+          </div>
         </div>
       </div>
     </section>
@@ -68,7 +81,7 @@ export function HomeHero() {
 
 export function TimingGap() {
   return (
-    <Section labelledBy="timing-heading">
+    <Section labelledBy="timing-heading" tone="white">
       <SectionIntro eyebrow="The Timing Gap" title="Independent Firms Are Losing the Timing War." titleId="timing-heading" align="split">
         <p>
           The most valuable wealth relationships rarely begin when someone searches for a financial advisor.
@@ -90,7 +103,7 @@ export function TimingGap() {
 
 export function MarketIntelligence() {
   return (
-    <Section id="intelligence" labelledBy="intel-heading">
+    <Section id="intelligence" labelledBy="intel-heading" tone="teal">
       <SectionIntro eyebrow="Market Intelligence" title="Map the Events That Precede Asset Movement." titleId="intel-heading" align="split">
         <p>
           Soinix continuously maps observable economic, corporate and professional signals across a
@@ -104,7 +117,7 @@ export function MarketIntelligence() {
 
 export function RegionalIntelligence() {
   return (
-    <Section labelledBy="regional-heading">
+    <Section labelledBy="regional-heading" tone="cream">
       <SectionIntro eyebrow="Regional Intelligence" title="Know Where Wealth Is Forming Across Your Market." titleId="regional-heading" align="split">
         <p>
           Instead of treating an entire geography as one prospecting pool, Soinix maps concentrations of
@@ -125,7 +138,7 @@ export function RegionalIntelligence() {
 
 export function ZeroFootprint() {
   return (
-    <Section id="infrastructure" labelledBy="footprint-heading">
+    <Section id="infrastructure" labelledBy="footprint-heading" tone="deep">
       <SectionIntro
         eyebrow="Zero-Footprint Deployment"
         title="Institutional Infrastructure Without Another Internal Department."
@@ -149,7 +162,7 @@ export function ZeroFootprint() {
 
 export function OperatingModel() {
   return (
-    <Section labelledBy="operating-heading">
+    <Section labelledBy="operating-heading" tone="white">
       <SectionIntro eyebrow="Operating Model" title="From Market Signal to Advisor Conversation." titleId="operating-heading" align="split">
         <p>The infrastructure operates continuously. Advisor time is introduced selectively.</p>
       </SectionIntro>
@@ -160,7 +173,7 @@ export function OperatingModel() {
 
 export function IndependentsWin() {
   return (
-    <Section labelledBy="independents-heading">
+    <Section labelledBy="independents-heading" tone="teal">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
         <div className="flex flex-col gap-6 lg:col-span-7">
           <IntelEyebrow>The Independent Position</IntelEyebrow>
@@ -187,7 +200,7 @@ export function IndependentsWin() {
 
 export function IdealClients() {
   return (
-    <Section id="who-we-work-with" labelledBy="clients-heading">
+    <Section id="who-we-work-with" labelledBy="clients-heading" tone="cream">
       <SectionIntro eyebrow="Who We Work With" title="Build Around the Clients You Actually Want." titleId="clients-heading" align="split">
         <p>
           This is not mass prospecting. The intelligence layer is configured around the firm&apos;s actual
@@ -202,7 +215,7 @@ export function IdealClients() {
 
 export function CompoundingIntelligence() {
   return (
-    <Section labelledBy="compound-heading">
+    <Section labelledBy="compound-heading" tone="white">
       <SectionIntro
         eyebrow="Compounding Intelligence"
         title="Built to Compound Market Intelligence, Not Generate More Activity."
@@ -221,7 +234,7 @@ export function CompoundingIntelligence() {
 
 export function MapYourMarket() {
   return (
-    <section aria-labelledby="map-heading" className="relative overflow-hidden border-t border-background/10">
+    <section aria-labelledby="map-heading" className="surface-teal on-dark relative overflow-hidden">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-fine" />
       <div className="container-site relative flex flex-col gap-10 py-24 md:py-32 lg:flex-row lg:items-end lg:justify-between">
         <div className="flex max-w-3xl flex-col gap-6">

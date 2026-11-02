@@ -36,7 +36,7 @@ const organizationSchema = {
 
 export default function HomePage() {
   return (
-    <main className="on-dark bg-ink text-background">
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

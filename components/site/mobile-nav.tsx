@@ -84,41 +84,26 @@ export function MobileNav({ open, onClose }: { open: boolean; onClose: () => voi
                           className="overflow-hidden"
                         >
                           <div className="flex flex-col gap-6 pb-6">
-                            {menu.columns.map((column) => (
-                              <div key={column.label} className="flex flex-col gap-1">
-                                <p className="pb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-                                  {column.label}
+                            {menu.groups.map((group) => (
+                              <div key={group.label} className="flex flex-col gap-1">
+                                <p className="pb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-brand/70">
+                                  {group.label}
                                 </p>
                                 <ul className="flex flex-col">
-                                  {column.links.map((link) => (
-                                    <li key={link.href + link.title}>
+                                  {group.links.map((link) => (
+                                    <li key={link.href} className="border-t border-brand/10">
                                       <Link
                                         href={link.href}
                                         onClick={onClose}
-                                        className="flex min-h-12 items-center justify-between gap-3 py-2 text-[17px] text-ink"
+                                        className="flex min-h-12 items-center justify-between gap-3 py-2 text-[17px] text-brand"
                                       >
                                         <span>{link.title}</span>
                                         {link.comingSoon ? (
-                                          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+                                          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-brand/45">
                                             Soon
                                           </span>
                                         ) : null}
                                       </Link>
-                                      {link.children ? (
-                                        <ul className="ml-1 flex flex-col border-l border-line pl-4">
-                                          {link.children.map((child) => (
-                                            <li key={child.href}>
-                                              <Link
-                                                href={child.href}
-                                                onClick={onClose}
-                                                className="flex min-h-11 items-center text-[16px] text-muted-foreground hover:text-ink"
-                                              >
-                                                {child.title}
-                                              </Link>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      ) : null}
                                     </li>
                                   ))}
                                 </ul>
