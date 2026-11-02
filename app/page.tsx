@@ -1,14 +1,28 @@
+import type { Metadata } from 'next'
 import { SITE } from '@/lib/site'
-import { Hero } from '@/components/home/hero'
-import { Opportunity } from '@/components/home/opportunity'
-import { TwoSources } from '@/components/home/two-sources'
-import { Process } from '@/components/home/process'
-import { Solutions } from '@/components/home/solutions'
-import { Execution } from '@/components/home/execution'
-import { Industries } from '@/components/home/industries'
-import { Infrastructure } from '@/components/home/infrastructure'
-import { WhyModel } from '@/components/home/why-model'
-import { AboutCompany, FinalCta } from '@/components/home/about-cta'
+import {
+  CompoundingIntelligence,
+  HomeHero,
+  IdealClients,
+  IndependentsWin,
+  MapYourMarket,
+  MarketIntelligence,
+  OperatingModel,
+  RegionalIntelligence,
+  TimingGap,
+  ZeroFootprint,
+} from '@/components/home-intel/sections'
+
+const TITLE = 'Organic Asset Growth Infrastructure for Independent Wealth Firms | Soinix'
+const DESCRIPTION =
+  'Soinix gives established independent RIAs and wealth firms earlier visibility into high-value wealth events across their markets, and the infrastructure to turn those signals into qualified advisor conversations.'
+
+export const metadata: Metadata = {
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  openGraph: { title: TITLE, description: DESCRIPTION, url: SITE.url },
+  twitter: { title: TITLE, description: DESCRIPTION },
+}
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -17,27 +31,26 @@ const organizationSchema = {
   legalName: SITE.legalName,
   url: SITE.url,
   logo: `${SITE.url}/brand/sgt-green.png`,
-  description: SITE.description,
+  description: DESCRIPTION,
 }
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="on-dark bg-ink text-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <Hero />
-      <Opportunity />
-      <TwoSources />
-      <Process />
-      <Solutions />
-      <Execution />
-      <Industries />
-      <Infrastructure />
-      <WhyModel />
-      <AboutCompany />
-      <FinalCta />
+      <HomeHero />
+      <TimingGap />
+      <MarketIntelligence />
+      <RegionalIntelligence />
+      <ZeroFootprint />
+      <OperatingModel />
+      <IndependentsWin />
+      <IdealClients />
+      <CompoundingIntelligence />
+      <MapYourMarket />
     </main>
   )
 }

@@ -9,8 +9,15 @@ import { Logo } from '@/components/brand/logo'
 import { MegaMenuPanel } from './mega-menu'
 import { MobileNav } from './mobile-nav'
 import { cn } from '@/lib/utils'
+import { usePathname } from 'next/navigation'
+import { HomeHeader } from './home-header'
 
 export function SiteHeader() {
+  const pathname = usePathname()
+  return pathname === '/' ? <HomeHeader /> : <DefaultHeader />
+}
+
+function DefaultHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [openMenu, setOpenMenu] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
