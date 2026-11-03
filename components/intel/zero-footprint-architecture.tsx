@@ -34,12 +34,12 @@ export function ZeroFootprintArchitecture({ className }: { className?: string })
     <figure className={cn('flex flex-col gap-0 md:flex-row md:items-stretch', className)} aria-label="Zero-footprint deployment architecture">
       <div className="flex flex-1 flex-col gap-4 rounded-[4px] border border-background/12 p-4 md:p-5">
         <div className="flex items-center justify-between">
-          <TechLabel tone="signal">Soinix Infrastructure</TechLabel>
+          <TechLabel tone="signal">Our Infrastructure</TechLabel>
           <TechLabel>Operates continuously</TechLabel>
         </div>
         <StageStack stages={INFRA_STAGES} tone="infra" />
         <p className="mt-auto border-t border-background/10 pt-4 text-[14px] font-medium uppercase tracking-[0.06em] text-background">
-          Soinix handles the infrastructure
+          We operate the infrastructure
         </p>
       </div>
 

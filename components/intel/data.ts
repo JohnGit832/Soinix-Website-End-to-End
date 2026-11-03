@@ -339,7 +339,7 @@ export const COMPARISON = {
     ],
   },
   soinix: {
-    label: 'Soinix Infrastructure',
+    label: 'Our Infrastructure',
     steps: [
       'Market defined',
       'Signals accumulated',

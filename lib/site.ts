@@ -4,7 +4,7 @@ export const SITE = {
   url: 'https://soinix.com',
   title: 'Organic Asset Growth Infrastructure | Soinix Growth Technologies',
   description:
-    'Soinix builds institutional growth infrastructure for established wealth management and financial advisory firms: market intelligence, opportunity strategy and qualified advisor conversations.',
+    'We build and operate organic asset growth infrastructure for established independent wealth firms: market intelligence, opportunity strategy, relationship activation and qualified advisor conversations.',
   bookHref: '/book',
   bookLabel: 'Request Market Mapping',
   /** Used later, after the qualification flow on /book. Never link to it directly from navigation. */
@@ -42,73 +42,56 @@ export type NavMenu = {
 
 export const NAV: NavMenu[] = [
   {
-    id: 'solutions',
-    label: 'Solutions',
+    id: 'capabilities',
+    label: 'Capabilities',
     intro: {
-      eyebrow: 'Solutions',
-      title: 'Two sources of organic growth. One infrastructure.',
-      body: 'New demand creates opportunity across the markets you want to win. Owned opportunity expands the value already inside the business.',
+      eyebrow: 'Capabilities',
+      title: 'Organic asset growth infrastructure. Built and operated by us.',
+      body: 'We connect market intelligence, opportunity strategy and relationship activation into one system that ends in qualified advisor conversations.',
     },
     groups: [
       {
-        label: 'New Demand',
-        description: 'Create new opportunities across the markets you want to win.',
+        label: 'Intel & Strategy',
         links: [
           {
-            title: 'New Demand',
-            description: 'The infrastructure for reaching new markets, accounts and relationships.',
-            href: '/solutions/new-demand',
-          },
-          {
-            title: 'Target Accounts',
-            description: 'Focused coverage of the organizations and people you want to win.',
-            href: '/solutions/target-account-acquisition',
-          },
-          {
-            title: 'Strategic Referral Partners',
-            description: 'Professional relationships that repeatedly introduce strong opportunities.',
-            href: '/solutions/strategic-referral-partner-acquisition',
-          },
-          {
-            title: 'Market and Niche Expansion',
-            description: 'Enter selected geographies and client segments deliberately.',
+            title: 'Market Mapping',
+            description: 'Defining high-value target segments and whitespace.',
             href: '/solutions/market-and-niche-expansion',
           },
           {
-            title: 'Timing-Led Opportunity',
-            description: 'Act on the capital and career events that precede a decision.',
+            title: 'Capital Signal Intelligence',
+            description: 'Predictive tracking of asset milestones and equity events.',
             href: '/solutions/signal-based-acquisition',
           },
         ],
       },
       {
-        label: 'Owned Opportunity',
-        description: 'Expand the value of relationships and opportunities already inside the business.',
+        label: 'Active Pipeline',
         links: [
           {
-            title: 'Existing Relationships',
-            description: 'Turn more of the relationships around the firm into active conversations.',
+            title: 'New Demand Generation',
+            description: 'Converting prioritized opportunities into active pipeline.',
+            href: '/solutions/new-demand',
+          },
+          {
+            title: 'Retained Pipeline Expansion',
+            description: 'Unlocking unworked value within historical firm relationships.',
             href: '/solutions/existing-relationships',
           },
+        ],
+      },
+      {
+        label: 'Relationship Infrastructure',
+        links: [
           {
-            title: 'Relationship Expansion',
-            description: 'Find additional opportunity across households and relationships.',
-            href: '/solutions/relationship-expansion',
+            title: 'Strategic Centers of Influence (COI)',
+            description: 'Systematizing networks of CPAs, estate attorneys and M&A advisors.',
+            href: '/solutions/strategic-referral-partner-acquisition',
           },
           {
-            title: 'Referral Programs',
-            description: 'Turn trust into a more consistent source of introductions.',
-            href: '/solutions/referral-activation',
-          },
-          {
-            title: 'Dormant Opportunity',
-            description: 'Restart valuable conversations that stopped moving.',
-            href: '/solutions/dormant-opportunity-reactivation',
-          },
-          {
-            title: 'Win-Back and Re-Engagement',
-            description: 'Reopen conversations with former prospects and clients.',
-            href: '/solutions/win-back-and-re-engagement',
+            title: 'Client & Advisory Hand-off',
+            description: 'Zero-footprint qualification and secure advisor routing protocols.',
+            href: '/how-we-work',
           },
         ],
       },
@@ -249,12 +232,13 @@ export const NAV: NavMenu[] = [
 
 export const FOOTER_COLUMNS: { label: string; links: { title: string; href: string }[] }[] = [
   {
-    label: 'Solutions',
+    label: 'Capabilities',
     links: [
-      { title: 'New Demand', href: '/solutions/new-demand' },
-      { title: 'Target Accounts', href: '/solutions/target-account-acquisition' },
-      { title: 'Strategic Referral Partners', href: '/solutions/strategic-referral-partner-acquisition' },
-      { title: 'Existing Relationships', href: '/solutions/existing-relationships' },
+      { title: 'Market Mapping', href: '/solutions/market-and-niche-expansion' },
+      { title: 'Capital Signal Intelligence', href: '/solutions/signal-based-acquisition' },
+      { title: 'New Demand Generation', href: '/solutions/new-demand' },
+      { title: 'Retained Pipeline Expansion', href: '/solutions/existing-relationships' },
+      { title: 'Strategic Centers of Influence', href: '/solutions/strategic-referral-partner-acquisition' },
     ],
   },
   {

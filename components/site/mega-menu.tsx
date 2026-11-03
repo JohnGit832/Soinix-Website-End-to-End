@@ -69,11 +69,20 @@ export function MegaMenuPanel({
       exit={{ opacity: 0, y: -4, transition: { duration: 0.14, ease: [0.4, 0, 1, 1] } }}
       className={cn(
         'absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3',
-        groupCount > 1 ? 'w-[min(1080px,calc(100vw-48px))]' : 'w-[min(820px,calc(100vw-48px))]',
+        groupCount > 2
+          ? 'w-[min(1200px,calc(100vw-48px))]'
+          : groupCount > 1
+            ? 'w-[min(1080px,calc(100vw-48px))]'
+            : 'w-[min(820px,calc(100vw-48px))]',
       )}
     >
       <div className="flex overflow-hidden rounded-[4px] border border-brand/15 bg-background shadow-[0_28px_60px_-36px_rgb(0_74_66_/_0.35)]">
-        <div className="flex w-[300px] shrink-0 flex-col justify-between gap-10 border-r border-brand/12 bg-cream p-8">
+        <div
+          className={cn(
+            'flex shrink-0 flex-col justify-between gap-10 border-r border-brand/12 bg-cream p-8',
+            groupCount > 2 ? 'w-[264px]' : 'w-[300px]',
+          )}
+        >
           <div className="flex flex-col gap-4">
             <p className="flex items-center gap-2.5 font-mono text-[10.5px] uppercase tracking-[0.18em] text-brand/70">
               <span aria-hidden="true" className="size-1.5 bg-signal ring-1 ring-brand/30" />
@@ -99,7 +108,12 @@ export function MegaMenuPanel({
           ) : null}
         </div>
 
-        <div className={cn('grid flex-1 gap-x-8 px-8 py-7', groupCount > 1 ? 'grid-cols-2' : 'grid-cols-1')}>
+        <div
+          className={cn(
+            'grid flex-1 gap-x-7 px-8 py-7',
+            groupCount > 2 ? 'grid-cols-3' : groupCount > 1 ? 'grid-cols-2' : 'grid-cols-1',
+          )}
+        >
           {menu.groups.map((group) => (
             <div key={group.label} className="flex flex-col">
               <div className="flex flex-col gap-1.5 pb-4">

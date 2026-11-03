@@ -1,21 +1,16 @@
 import type { Metadata } from 'next'
 import { SITE } from '@/lib/site'
 import {
-  CompoundingIntelligence,
+  CapabilitiesActivation,
+  CapabilitiesFoundation,
+  CapitalSignalIntelligence,
   HomeHero,
-  IdealClients,
-  IndependentsWin,
   MapYourMarket,
-  MarketIntelligence,
-  OperatingModel,
-  RegionalIntelligence,
-  TimingGap,
-  ZeroFootprint,
 } from '@/components/home-intel/sections'
 
 const TITLE = 'Organic Asset Growth Infrastructure for Independent Wealth Firms | Soinix'
 const DESCRIPTION =
-  'Soinix gives established independent RIAs and wealth firms earlier visibility into high-value wealth events across their markets, and the infrastructure to turn those signals into qualified advisor conversations.'
+  'We build and operate the asset-growth infrastructure that connects market opportunity to qualified advisor conversations for established independent wealth practices, without adding operational headcount.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -42,14 +37,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <HomeHero />
-      <TimingGap />
-      <MarketIntelligence />
-      <RegionalIntelligence />
-      <ZeroFootprint />
-      <OperatingModel />
-      <IndependentsWin />
-      <IdealClients />
-      <CompoundingIntelligence />
+      <CapabilitiesFoundation />
+      <CapitalSignalIntelligence />
+      <CapabilitiesActivation />
       <MapYourMarket />
     </main>
   )
