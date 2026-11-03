@@ -25,7 +25,7 @@ const EXTRA_PAGES: PlannedPage[] = [
   {
     href: '/resources',
     title: 'Resources',
-    description: 'Research, frameworks and tools on market intelligence and organic asset growth.',
+    description: 'Research, frameworks and tools on market intelligence and asset growth.',
     section: 'Resources',
   },
   // Legacy routes kept reachable for backward compatibility. Not surfaced in navigation.
