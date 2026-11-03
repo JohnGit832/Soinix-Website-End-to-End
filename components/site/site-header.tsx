@@ -109,7 +109,7 @@ export function SiteHeader() {
                       }}
                       className={cn(
                         'relative flex h-10 items-center gap-1.5 rounded-lg px-3.5 text-[14.5px] font-medium transition-colors duration-200',
-                        isOpen ? 'text-brand' : 'text-ink/80 hover:text-ink',
+                        isOpen ? 'text-brand' : 'text-brand/80 hover:text-brand',
                       )}
                     >
                       {menu.label}
@@ -146,8 +146,7 @@ export function SiteHeader() {
               href={SITE.bookHref}
               className="group/btn hidden h-11 items-center gap-2 rounded-lg bg-brand px-4 text-[14px] font-medium text-primary-foreground transition-colors duration-200 hover:bg-brand-deep md:inline-flex xl:px-5"
             >
-              <span className="xl:hidden">Book a Review</span>
-              <span className="hidden xl:inline">{SITE.bookLabel}</span>
+              {SITE.bookLabel}
               <ArrowRight
                 aria-hidden="true"
                 className="size-4 transition-transform duration-200 group-hover/btn:translate-x-1"
@@ -175,7 +174,7 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 hidden bg-ink/10 lg:block"
+            className="fixed inset-0 z-40 hidden bg-brand-deep/10 lg:block"
             onClick={closeAll}
           />
         ) : null}

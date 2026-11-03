@@ -1,14 +1,23 @@
+import type { Metadata } from 'next'
 import { SITE } from '@/lib/site'
-import { Hero } from '@/components/home/hero'
-import { Opportunity } from '@/components/home/opportunity'
-import { TwoSources } from '@/components/home/two-sources'
-import { Process } from '@/components/home/process'
-import { Solutions } from '@/components/home/solutions'
-import { Execution } from '@/components/home/execution'
-import { Industries } from '@/components/home/industries'
-import { Infrastructure } from '@/components/home/infrastructure'
-import { WhyModel } from '@/components/home/why-model'
-import { AboutCompany, FinalCta } from '@/components/home/about-cta'
+import {
+  CapabilitiesActivation,
+  CapabilitiesFoundation,
+  CapitalSignalIntelligence,
+  HomeHero,
+  MapYourMarket,
+} from '@/components/home-intel/sections'
+
+const TITLE = 'Organic Asset Growth Infrastructure for Independent Wealth Firms | Soinix'
+const DESCRIPTION =
+  'We build and operate the asset-growth infrastructure that connects market opportunity to qualified advisor conversations for established independent wealth practices, without adding operational headcount.'
+
+export const metadata: Metadata = {
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  openGraph: { title: TITLE, description: DESCRIPTION, url: SITE.url },
+  twitter: { title: TITLE, description: DESCRIPTION },
+}
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -17,7 +26,7 @@ const organizationSchema = {
   legalName: SITE.legalName,
   url: SITE.url,
   logo: `${SITE.url}/brand/sgt-green.png`,
-  description: SITE.description,
+  description: DESCRIPTION,
 }
 
 export default function HomePage() {
@@ -27,17 +36,11 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <Hero />
-      <Opportunity />
-      <TwoSources />
-      <Process />
-      <Solutions />
-      <Execution />
-      <Industries />
-      <Infrastructure />
-      <WhyModel />
-      <AboutCompany />
-      <FinalCta />
+      <HomeHero />
+      <CapabilitiesFoundation />
+      <CapitalSignalIntelligence />
+      <CapabilitiesActivation />
+      <MapYourMarket />
     </main>
   )
 }
