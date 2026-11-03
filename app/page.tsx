@@ -8,7 +8,7 @@ import {
   MapYourMarket,
 } from '@/components/home-intel/sections'
 
-const TITLE = 'Organic Asset Growth Infrastructure for Independent Wealth Firms | Soinix'
+const TITLE = 'Asset Growth Infrastructure for Independent Wealth Firms | Soinix'
 const DESCRIPTION =
   'We build and operate the asset-growth infrastructure that connects market opportunity to qualified advisor conversations for established independent wealth practices, without adding operational headcount.'
 

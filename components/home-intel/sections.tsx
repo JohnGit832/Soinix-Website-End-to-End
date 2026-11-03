@@ -36,7 +36,7 @@ export function HomeHero() {
       <div className="container-site relative flex flex-col gap-16 pb-16 pt-16 md:pt-24 lg:gap-20 lg:pb-20 lg:pt-28">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
           <div className="flex flex-col gap-8 lg:col-span-7">
-            <IntelEyebrow>Organic Asset Growth Infrastructure</IntelEyebrow>
+            <IntelEyebrow>Asset Growth Infrastructure</IntelEyebrow>
             <h1 id="hero-heading" className="text-display-xl text-balance font-medium text-background">
               See Capital Before It Moves.
             </h1>

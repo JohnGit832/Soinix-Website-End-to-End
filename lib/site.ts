@@ -2,9 +2,9 @@ export const SITE = {
   name: 'Soinix Growth Technologies',
   legalName: 'Soinix Growth Technologies LLC',
   url: 'https://soinix.com',
-  title: 'Organic Asset Growth Infrastructure | Soinix Growth Technologies',
+  title: 'Asset Growth Infrastructure | Soinix Growth Technologies',
   description:
-    'We build and operate organic asset growth infrastructure for established independent wealth firms: market intelligence, opportunity strategy, relationship activation and qualified advisor conversations.',
+    'We build and operate asset growth infrastructure for established independent wealth firms: market intelligence, opportunity strategy, relationship activation and qualified advisor conversations.',
   bookHref: '/book',
   bookLabel: 'Request Market Mapping',
   /** Used later, after the qualification flow on /book. Never link to it directly from navigation. */
@@ -46,7 +46,7 @@ export const NAV: NavMenu[] = [
     label: 'Capabilities',
     intro: {
       eyebrow: 'Capabilities',
-      title: 'Organic asset growth infrastructure. Built and operated by us.',
+      title: 'Asset growth infrastructure. Built and operated by us.',
       body: 'We connect market intelligence, opportunity strategy and relationship activation into one system that ends in qualified advisor conversations.',
     },
     groups: [
@@ -112,7 +112,7 @@ export const NAV: NavMenu[] = [
         links: [
           {
             title: 'Wealth Management',
-            description: 'Institutional organic growth infrastructure for established wealth firms.',
+            description: 'Institutional asset growth infrastructure for established wealth firms.',
             href: '/financial-services/wealth-management',
           },
           {
@@ -135,7 +135,7 @@ export const NAV: NavMenu[] = [
     intro: {
       eyebrow: 'Resources',
       title: 'Research, frameworks and tools.',
-      body: 'Our thinking on market intelligence, organic asset growth and advisor leverage.',
+      body: 'Our thinking on market intelligence, asset growth and advisor leverage.',
       cta: { label: 'All resources', href: '/resources' },
     },
     groups: [
@@ -193,7 +193,7 @@ export const NAV: NavMenu[] = [
     intro: {
       eyebrow: 'About Soinix',
       title: 'Growth infrastructure, built and operated.',
-      body: 'An independent firm building the market intelligence and distribution infrastructure behind organic asset growth.',
+      body: 'An independent firm building the market intelligence and distribution infrastructure behind asset growth.',
     },
     groups: [
       {
